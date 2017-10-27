@@ -11,13 +11,12 @@ import Foundation
 class TPObfuscatedStringConverter {
     
     class func convert(phrase: String) -> String {
-        let characters = phrase.characters
         var result = [String]()
         
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.spellOut
         
-        for c in characters {
+        for c in phrase {
             let s = String(c).unicodeScalars
             let unicode = Int(s[s.startIndex].value)
             switch unicode {
